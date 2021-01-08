@@ -4,7 +4,7 @@ export default class Article extends React.Component {
   render() {
     return (
       //   <div className='col'>
-      <div className='card p-2'>
+      <div className='card'>
         <img
           src='https://i.stack.imgur.com/vhoa0.jpg'
           className='card-img-top'
