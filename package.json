@@ -2,7 +2,7 @@
   "name": "blog",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/gokulNth/blog/",
+  "homepage": "https://github.com/gokulNth/blog",
   "dependencies": {
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
