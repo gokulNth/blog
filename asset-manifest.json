@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.js": "/gokulNth/blog.git/static/js/main.dd89af08.chunk.js",
-    "main.js.map": "/gokulNth/blog.git/static/js/main.dd89af08.chunk.js.map",
-    "runtime-main.js": "/gokulNth/blog.git/static/js/runtime-main.a4f5c8ff.js",
-    "runtime-main.js.map": "/gokulNth/blog.git/static/js/runtime-main.a4f5c8ff.js.map",
-    "static/js/2.405434e6.chunk.js": "/gokulNth/blog.git/static/js/2.405434e6.chunk.js",
-    "static/js/2.405434e6.chunk.js.map": "/gokulNth/blog.git/static/js/2.405434e6.chunk.js.map",
-    "index.html": "/gokulNth/blog.git/index.html",
-    "static/js/2.405434e6.chunk.js.LICENSE.txt": "/gokulNth/blog.git/static/js/2.405434e6.chunk.js.LICENSE.txt"
+    "main.js": "/gokulNth/blog/static/js/main.dd89af08.chunk.js",
+    "main.js.map": "/gokulNth/blog/static/js/main.dd89af08.chunk.js.map",
+    "runtime-main.js": "/gokulNth/blog/static/js/runtime-main.df6a0a1a.js",
+    "runtime-main.js.map": "/gokulNth/blog/static/js/runtime-main.df6a0a1a.js.map",
+    "static/js/2.405434e6.chunk.js": "/gokulNth/blog/static/js/2.405434e6.chunk.js",
+    "static/js/2.405434e6.chunk.js.map": "/gokulNth/blog/static/js/2.405434e6.chunk.js.map",
+    "index.html": "/gokulNth/blog/index.html",
+    "static/js/2.405434e6.chunk.js.LICENSE.txt": "/gokulNth/blog/static/js/2.405434e6.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.a4f5c8ff.js",
+    "static/js/runtime-main.df6a0a1a.js",
     "static/js/2.405434e6.chunk.js",
     "static/js/main.dd89af08.chunk.js"
   ]
