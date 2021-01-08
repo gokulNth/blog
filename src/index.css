@@ -1,0 +1,10 @@
+.flex-parent {
+  display: flex;
+  flex-flow: row wrap;
+}
+.flex-children {
+  display: flex;
+  flex-grow: 4;
+  flex-shrink: 3;
+  flex-basis: auto;
+}
