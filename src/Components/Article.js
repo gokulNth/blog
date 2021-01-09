@@ -3,8 +3,7 @@ import React from 'react';
 export default class Article extends React.Component {
   render() {
     return (
-      //   <div className='col'>
-      <div className='card'>
+      <div className='card p-4 border-light shadow'>
         <img
           src='https://i.stack.imgur.com/vhoa0.jpg'
           className='card-img-top'
@@ -18,7 +17,6 @@ export default class Article extends React.Component {
           </p>
         </div>
       </div>
-      //   </div>
     );
   }
 }
