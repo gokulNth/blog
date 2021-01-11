@@ -1,10 +1,13 @@
+import React from 'react';
 import Article from './Components/Article';
+import data from './data.json';
 
-function App() {
+function App(props) {
+  let { order } = props;
   return (
-    <div className='d-flex justify-content-around flex-wrap'>
-      {[1, 2, 3, 4, 5].map((i) => (
-        <Article key={i} />
+    <div className='row'>
+      {data.all_arti.map((i) => (
+        <Article key={i} order={order} data={data.Articles[i]} />
       ))}
     </div>
   );
