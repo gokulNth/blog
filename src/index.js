@@ -9,10 +9,10 @@ ReactDOM.render(
     <Header />
     <div className='container'>
       <div className='row'>
-        <div className='col-12 col-md-8'>
+        <div className='col-sm-12 col-lg-8'>
           <App order={1} />
         </div>
-        <div className='col-12 col-md-4'>
+        <div className='col-sm-12 col-lg-4'>
           <App order={2} />
         </div>
       </div>
