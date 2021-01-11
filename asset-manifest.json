@@ -1,17 +1,20 @@
 {
   "files": {
-    "main.js": "/gokulNth/blog/static/js/main.dd89af08.chunk.js",
-    "main.js.map": "/gokulNth/blog/static/js/main.dd89af08.chunk.js.map",
-    "runtime-main.js": "/gokulNth/blog/static/js/runtime-main.df6a0a1a.js",
-    "runtime-main.js.map": "/gokulNth/blog/static/js/runtime-main.df6a0a1a.js.map",
-    "static/js/2.405434e6.chunk.js": "/gokulNth/blog/static/js/2.405434e6.chunk.js",
-    "static/js/2.405434e6.chunk.js.map": "/gokulNth/blog/static/js/2.405434e6.chunk.js.map",
-    "index.html": "/gokulNth/blog/index.html",
-    "static/js/2.405434e6.chunk.js.LICENSE.txt": "/gokulNth/blog/static/js/2.405434e6.chunk.js.LICENSE.txt"
+    "main.css": "/gokulNth/static/css/main.8bda5ae8.chunk.css",
+    "main.js": "/gokulNth/static/js/main.7e2b22f2.chunk.js",
+    "main.js.map": "/gokulNth/static/js/main.7e2b22f2.chunk.js.map",
+    "runtime-main.js": "/gokulNth/static/js/runtime-main.53e2597b.js",
+    "runtime-main.js.map": "/gokulNth/static/js/runtime-main.53e2597b.js.map",
+    "static/js/2.f6592f3c.chunk.js": "/gokulNth/static/js/2.f6592f3c.chunk.js",
+    "static/js/2.f6592f3c.chunk.js.map": "/gokulNth/static/js/2.f6592f3c.chunk.js.map",
+    "index.html": "/gokulNth/index.html",
+    "static/css/main.8bda5ae8.chunk.css.map": "/gokulNth/static/css/main.8bda5ae8.chunk.css.map",
+    "static/js/2.f6592f3c.chunk.js.LICENSE.txt": "/gokulNth/static/js/2.f6592f3c.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.df6a0a1a.js",
-    "static/js/2.405434e6.chunk.js",
-    "static/js/main.dd89af08.chunk.js"
+    "static/js/runtime-main.53e2597b.js",
+    "static/js/2.f6592f3c.chunk.js",
+    "static/css/main.8bda5ae8.chunk.css",
+    "static/js/main.7e2b22f2.chunk.js"
   ]
 }
