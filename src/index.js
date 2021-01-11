@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import Header from './Components/Header';
+import { HeaderBanner, HeaderNav } from './Components/Header';
 import './index.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Header />
-    <div className='container'>
+    <HeaderBanner />
+    <HeaderNav />
+    <div className='container content'>
       <div className='row'>
         <div className='col-sm-12 col-lg-8'>
           <App order={1} />
