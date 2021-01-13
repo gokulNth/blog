@@ -1,20 +1,26 @@
 import React from 'react';
+// import png from './icons8-double-down-48.png';
 
 class HeaderBanner extends React.Component {
   render() {
     const style = {
-      align: 'center',
+      height: 400,
+      background:
+        '#1abc9c url(https://blog.hootsuite.com/wp-content/uploads/2018/05/facebook-cover-photo-940x470.jpg) no-repeat fixed',
+      backgroundSize: 'cover',
+    };
+    const styles = {
       fontSize: 32,
-      height: 300,
-      padding: 100,
       color: 'white',
       textAlign: 'center',
-      backgroundColor: '#1abc9c',
-      // position: 'fixed',
+      padding: '300px',
     };
     return (
-      <div style={style}>
-        <div style={{}}>Header</div>
+      <div id='coverImg' style={style}>
+        <div id='headTxt' style={styles}>
+          {/* <img src={png} style={{ position: 'absolute' }} alt='cover' /> */}
+          Header
+        </div>
       </div>
     );
   }
@@ -24,13 +30,11 @@ class HeaderNav extends React.Component {
   render() {
     return (
       <nav
-        className='navbar navbar-expand-lg navbar-light'
+        className='navbar navbar-expand-lg navbar-light bg-light'
         id='navbar'
         style={{
-          height: 100,
-          backgroundColor: 'rgba(171, 255, 233,0.9)',
           zIndex: 3,
-          transition: '1s ease-in-out',
+          boxShadow: '10px 10px 20px grey',
         }}
       >
         <div className='container-fluid'>

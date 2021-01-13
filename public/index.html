@@ -27,11 +27,14 @@
     window.onscroll = function () {
       myFunction();
     };
-
     var navbar = document.getElementById('navbar');
+    var cover = document.getElementById('coverImg');
+    var headTxt = document.getElementById('headTxt');
     var sticky = navbar.offsetTop;
 
     function myFunction() {
+      cover.style.backgroundPositionY = '-' + pageYOffset * 1.2 + 'px';
+      headTxt.style.transform = 'translateY(-' + pageYOffset * 1.4 + 'px)';
       if (window.pageYOffset >= sticky) {
         navbar.classList.add('sticky');
       } else {
