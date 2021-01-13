@@ -1,0 +1,2 @@
+.flex-parent{display:flex;flex-flow:row wrap}.flex-children{display:flex;flex-grow:4;flex-shrink:3;flex-basis:auto}.box{perspective:1000px;perspective-origin:100% 100%}.tv{transform:rotate3d(-50,50,10,10deg);box-shadow:20px 25px 50px #888;z-index:1}.sticky{position:fixed;top:0;width:100%}.content{padding-top:70px}.sticky+.content{padding-top:130px}
+/*# sourceMappingURL=main.67272565.chunk.css.map */
