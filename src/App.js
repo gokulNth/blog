@@ -3,7 +3,7 @@ import Article from './Components/Utils/Article';
 import { getAllArticles } from './Components/Firebase/utils';
 import { HeaderBanner, HeaderNav } from './Components/Utils/Header';
 import { cssScroll } from './Components/Utils/utils';
-import LoginPage from './Components/Utils/LoginPage';
+import LoadingPage from './Components/Utils/LoadingPage';
 import ServerError from './Components/Utils/ServerError';
 
 class App extends React.Component {
@@ -32,7 +32,7 @@ class App extends React.Component {
             ) : serverError ? (
               <ServerError />
             ) : (
-              <LoginPage />
+              <LoadingPage />
             )}
           </div>
         </div>

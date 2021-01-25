@@ -66,7 +66,9 @@ class HeaderNav extends React.Component {
               </li>
             </ul>
             <form className='d-flex'>
-              <LoginPage />
+              <LoginPage
+                updateEmail={this.props.updateEmail && this.props.updateEmail}
+              />
             </form>
           </div>
         </div>

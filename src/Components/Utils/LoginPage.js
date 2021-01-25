@@ -1,7 +1,7 @@
 import React from 'react';
 import firebase from 'firebase/app';
 import 'firebase/auth';
-import { signIn, signOut } from '../Firebase/utils';
+import { addUserIfNeeded, signIn, signOut } from '../Firebase/utils';
 
 class LoginPage extends React.Component {
   constructor(props) {
@@ -12,11 +12,11 @@ class LoginPage extends React.Component {
   }
   componentDidMount() {
     this.setState({ user: 'loading' });
-    firebase
-      .auth()
-      .onAuthStateChanged((firebaseUser) =>
-        this.setState({ user: firebaseUser ? firebaseUser.displayName : null })
-      );
+    firebase.auth().onAuthStateChanged((user) => {
+      this.setState({ user: user ? user.displayName : null });
+      addUserIfNeeded(user.displayName, user.email);
+      this.props.updateEmail && this.props.updateEmail(user.email);
+    });
   }
   render() {
     let { user } = this.state;

@@ -1,4 +1,5 @@
 import db from './config';
+import firebase from 'firebase';
 
 export function getAllArticles() {
   return db
@@ -14,6 +15,17 @@ export function signIn(firebase) {
   return firebase.auth().signInWithRedirect(provider);
 }
 
+export function addUserIfNeeded(name, email) {
+  return db
+    .collection('Users')
+    .doc(email)
+    .get()
+    .then(
+      (user) =>
+        !user.exists && db.collection('Users').doc(email).set({ email, name })
+    );
+}
+
 export function signOut(firebase) {
   firebase
     .auth()
@@ -26,13 +38,20 @@ export function signOut(firebase) {
     });
 }
 
-export function getArticle(id) {
-  var docRef = db.collection('article').doc(id);
-
-  return docRef
+export function likeArticle(id, like, email) {
+  var docRef = db.collection('article').doc(id.toString());
+  var writeRef = db.collection('Users').doc(email);
+  writeRef
     .get()
     .then((doc) => doc.data())
-    .catch(function (error) {
-      console.log('Error getting document:', error);
+    .then((data) => {
+      if (!data.likedArticles.includes(id)) {
+        docRef.set({ like: like + 1 }, { merge: true });
+        writeRef.update({
+          likedArticles: firebase.firestore.FieldValue.arrayUnion(id),
+        });
+      } else {
+        alert('You already liked this article');
+      }
     });
 }
