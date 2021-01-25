@@ -1,5 +1,5 @@
 import React from 'react';
-// import png from './icons8-double-down-48.png';
+import LoginPage from './LoginPage';
 
 class HeaderBanner extends React.Component {
   render() {
@@ -66,15 +66,7 @@ class HeaderNav extends React.Component {
               </li>
             </ul>
             <form className='d-flex'>
-              <input
-                className='form-control me-2'
-                type='search'
-                placeholder='Search'
-                aria-label='Search'
-              />
-              <button className='btn btn-outline-success' type='submit'>
-                Search
-              </button>
+              <LoginPage />
             </form>
           </div>
         </div>
