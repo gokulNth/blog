@@ -17,3 +17,10 @@ export function cssScroll() {
     }
   }
 }
+
+export function truncate(content) {
+  return `${content.substring(
+    0,
+    window.innerWidth < 1000 ? 200 : window.innerWidth < 500 ? 100 : 300
+  )}  ...`;
+}

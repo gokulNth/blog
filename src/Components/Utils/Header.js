@@ -37,7 +37,7 @@ class HeaderNav extends React.Component {
           boxShadow: '10px 10px 20px grey',
         }}
       >
-        <div className='container-fluid'>
+        <div className='container-fluid container'>
           <button
             className='navbar-toggler'
             type='button'
@@ -55,7 +55,7 @@ class HeaderNav extends React.Component {
           <div className='collapse navbar-collapse' id='navbarTogglerDemo02'>
             <ul className='navbar-nav me-auto mb-2 mb-lg-0'>
               <li className='nav-item'>
-                <i className='nav-link active' aria-current='page' href='#'>
+                <i className='nav-link' aria-current='page' href='#'>
                   Home
                 </i>
               </li>

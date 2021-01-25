@@ -1,4 +1,5 @@
 import React from 'react';
+import { truncate } from './utils';
 
 class Article extends React.Component {
   render() {
@@ -6,20 +7,15 @@ class Article extends React.Component {
       data: { title, content, like, comment, image, id },
     } = this.props;
     return (
-      <div className='card mb-3'>
-        <img src={image} className='card-img-top tv' alt={`img_${id}`} />
-        <div className='card-body'>
-          <h5 className='card-title'>{title}</h5>
-          <div className='card-text trunc '>
-            {content}
-            <div className='read-more'>&darr;</div>
-          </div>
-          <div className='card-text'>
-            <small>
-              {' '}
-              <button className='btn'>Like : {like}</button>{' '}
-              <button className='btn'>Comment : {comment}</button>{' '}
-            </small>
+      <div className='col-sm-12 col-md-12 col-lg-6'>
+        <div className='card'>
+          <img src={image} className='card-img-top' alt='...' />
+          <div className='card-body'>
+            <h5 className='card-title'>{title}</h5>
+            <p className='card-text'>{truncate(content)}</p>
+            <button className='btn btn-primary float-right'>
+              <div>Read More</div>
+            </button>
           </div>
         </div>
       </div>
