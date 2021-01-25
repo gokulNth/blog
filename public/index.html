@@ -22,23 +22,5 @@
       integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
       crossorigin="anonymous"
     ></script>
-    <script>
-      window.onscroll = function () {
-        myFunction();
-      };
-      function myFunction() {
-        let navbar = document.getElementById('navbar');
-        var sticky = navbar.offsetTop;
-        var cover = document.getElementById('coverImg');
-        var headTxt = document.getElementById('headTxt');
-        cover.style.backgroundPositionY = '-' + pageYOffset * 1.2 + 'px';
-        headTxt.style.transform = 'translateY(-' + pageYOffset * 0.8 + 'px)';
-        if (window.pageYOffset >= sticky) {
-          navbar.classList.add('sticky');
-        } else {
-          navbar.classList.remove('sticky');
-        }
-      }
-    </script>
   </body>
 </html>
