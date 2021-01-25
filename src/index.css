@@ -1,5 +1,5 @@
 .tv {
-  transform: rotate3d(-50, 50, 10, 10deg);
+  transform: rotate3d(-10, 90, 20, 15deg);
   box-shadow: 20px 25px 50px #888888;
   z-index: 1;
 }
@@ -16,4 +16,20 @@
 
 .sticky + .content {
   padding-top: 130px;
+}
+
+center {
+  line-height: 1.5;
+}
+
+center::first-letter {
+  color: white;
+  font-family: cursive;
+  background-color: black;
+  border-radius: 2px;
+  box-shadow: 3px 3px 0 red;
+  font-size: 40px;
+  padding: 6px 3px;
+  margin-right: 6px;
+  float: left;
 }

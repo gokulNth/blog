@@ -1,4 +1,6 @@
-export function getAllArticles(db) {
+import db from './config';
+
+export function getAllArticles() {
   return db
     .collection('article')
     .get()
@@ -21,5 +23,16 @@ export function signOut(firebase) {
     })
     .catch((error) => {
       alert('signOut Failed');
+    });
+}
+
+export function getArticle(id) {
+  var docRef = db.collection('article').doc(id);
+
+  return docRef
+    .get()
+    .then((doc) => doc.data())
+    .catch(function (error) {
+      console.log('Error getting document:', error);
     });
 }

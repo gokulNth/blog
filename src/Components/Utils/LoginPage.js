@@ -35,6 +35,7 @@ class LoginPage extends React.Component {
           role='status'
           aria-hidden='true'
         ></span>
+        {'  '}
         Loading...
       </button>
     ) : (
