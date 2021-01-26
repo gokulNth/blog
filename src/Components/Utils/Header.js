@@ -7,7 +7,7 @@ class HeaderBanner extends React.Component {
     const style = {
       height: window.innerWidth < 600 ? 200 : 400,
       background:
-        '#1abc9c url(https://blog.hootsuite.com/wp-content/uploads/2018/05/facebook-cover-photo-940x470.jpg) no-repeat fixed',
+        '#1abc9c url(https://blog.hootsuite.com/wp-content/uploads/2018/05/facebook-cover-photo-940x470.jpg) no-repeat fixed center',
       backgroundSize: 'cover',
     };
     const styles = {
