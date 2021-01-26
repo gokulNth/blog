@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import LoginPage from './LoginPage';
 
 class HeaderBanner extends React.Component {
   render() {
     const style = {
-      height: 400,
+      height: window.innerWidth < 600 ? 200 : 400,
       background:
         '#1abc9c url(https://blog.hootsuite.com/wp-content/uploads/2018/05/facebook-cover-photo-940x470.jpg) no-repeat fixed',
       backgroundSize: 'cover',
@@ -13,7 +14,7 @@ class HeaderBanner extends React.Component {
       fontSize: 32,
       color: 'white',
       textAlign: 'center',
-      padding: '300px',
+      paddingTop: window.innerWidth < 600 ? 100 : 300,
     };
     return (
       <div id='coverImg' style={style}>
@@ -30,7 +31,7 @@ class HeaderNav extends React.Component {
   render() {
     return (
       <nav
-        className='navbar navbar-expand-lg navbar-light bg-light'
+        className='navbar navbar-light bg-light'
         id='navbar'
         style={{
           zIndex: 3,
@@ -38,38 +39,13 @@ class HeaderNav extends React.Component {
         }}
       >
         <div className='container-fluid container'>
-          <button
-            className='navbar-toggler'
-            type='button'
-            data-bs-toggle='collapse'
-            data-bs-target='#navbarTogglerDemo02'
-            aria-controls='navbarTogglerDemo02'
-            aria-expanded='false'
-            aria-label='Toggle navigation'
-          >
-            <span className='navbar-toggler-icon'></span>
-          </button>
-          <i className='navbar-brand' href='#'>
+          <Link className='navbar-brand' to='/'>
             Navbar
-          </i>
-          <div className='collapse navbar-collapse' id='navbarTogglerDemo02'>
-            <ul className='navbar-nav me-auto mb-2 mb-lg-0'>
-              <li className='nav-item'>
-                <i className='nav-link' aria-current='page' href='#'>
-                  Home
-                </i>
-              </li>
-              <li className='nav-item'>
-                <i className='nav-link' href='#'>
-                  Link
-                </i>
-              </li>
-            </ul>
-            <form className='d-flex'>
-              <LoginPage
-                updateEmail={this.props.updateEmail && this.props.updateEmail}
-              />
-            </form>
+          </Link>
+          <div className='d-flex'>
+            <LoginPage
+              updateEmail={this.props.updateEmail && this.props.updateEmail}
+            />
           </div>
         </div>
       </nav>

@@ -26,7 +26,7 @@ class App extends React.Component {
         <HeaderBanner />
         <HeaderNav />
         <div className='content container'>
-          <div className='row'>
+          <div className='row' style={{ paddingBottom: 30 }}>
             {articles.length && articles.length > 0 ? (
               articles.map((i) => <Article key={i.id} data={i} />)
             ) : serverError ? (

@@ -13,9 +13,13 @@ class LoginPage extends React.Component {
   componentDidMount() {
     this.setState({ user: 'loading' });
     firebase.auth().onAuthStateChanged((user) => {
-      this.setState({ user: user ? user.displayName : null });
-      addUserIfNeeded(user.displayName, user.email);
-      this.props.updateEmail && this.props.updateEmail(user.email);
+      if (user) {
+        this.setState({ user: user.displayName });
+        addUserIfNeeded(user.displayName, user.email);
+        this.props.updateEmail && this.props.updateEmail(user.email);
+      } else {
+        this.setState({ user: null });
+      }
     });
   }
   render() {
@@ -43,7 +47,12 @@ class LoginPage extends React.Component {
         <button
           className='btn btn-primary'
           type='button'
-          onClick={() => signOut(firebase)}
+          onClick={() => {
+            let a = window.confirm('Are you sure you want to sign out');
+            if (a) {
+              signOut(firebase);
+            }
+          }}
         >
           {this.state.user.toUpperCase()}
         </button>

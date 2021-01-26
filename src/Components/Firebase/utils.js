@@ -38,20 +38,18 @@ export function signOut(firebase) {
     });
 }
 
-export function likeArticle(id, like, email) {
+export function likeArticle(id, like, user) {
   var docRef = db.collection('article').doc(id.toString());
-  var writeRef = db.collection('Users').doc(email);
-  writeRef
-    .get()
-    .then((doc) => doc.data())
-    .then((data) => {
-      if (!data.likedArticles.includes(id)) {
-        docRef.set({ like: like + 1 }, { merge: true });
-        writeRef.update({
-          likedArticles: firebase.firestore.FieldValue.arrayUnion(id),
-        });
-      } else {
-        alert('You already liked this article');
-      }
+  var writeRef = db.collection('Users').doc(user.email);
+  if (!user.likedArticles.includes(id)) {
+    docRef.set({ like: like + 1 }, { merge: true });
+    writeRef.update({
+      likedArticles: firebase.firestore.FieldValue.arrayUnion(id),
     });
+  } else {
+    docRef.set({ like: like - 1 }, { merge: true });
+    writeRef.update({
+      likedArticles: firebase.firestore.FieldValue.arrayRemove(id),
+    });
+  }
 }

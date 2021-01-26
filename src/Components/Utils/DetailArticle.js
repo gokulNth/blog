@@ -13,12 +13,13 @@ export default class DetailArticle extends React.Component {
     super(props);
     this.state = {
       details: '',
-      email: '',
+      User: '',
     };
     this.updateEmail = this.updateEmail.bind(this);
   }
   updateEmail(email) {
-    this.setState({ email: email });
+    var docRef = db.collection('Users').doc(email);
+    docRef.onSnapshot((doc) => this.setState({ User: doc.data() }));
   }
   componentDidMount() {
     var docRef = db
@@ -27,7 +28,16 @@ export default class DetailArticle extends React.Component {
     return docRef.onSnapshot((doc) => this.setState({ details: doc.data() }));
   }
   render() {
-    let { details, email } = this.state;
+    let { details, User } = this.state;
+    let style = {
+      borderRadius: '20%',
+      backgroundImage: `linear-gradient(to top, ${
+        User.likedArticles && User.likedArticles.includes(details.id)
+          ? 'red'
+          : 'black'
+      }, white)`,
+      overflow: 'auto',
+    };
     return (
       <div>
         <HeaderNav updateEmail={this.updateEmail} />
@@ -55,9 +65,15 @@ export default class DetailArticle extends React.Component {
             <div className='row container'>
               <div style={{ cursor: 'pointer' }} className='col'>
                 <img
-                  onClick={() => likeArticle(details.id, details.like, email)}
+                  onClick={() =>
+                    User !== ''
+                      ? likeArticle(details.id, details.like, User)
+                      : alert('Kindly Login to like this Post')
+                  }
                   src={likeImg}
+                  style={style}
                   alt='like_img'
+                  className='like'
                 />
                 <hr />
                 {details.like}
