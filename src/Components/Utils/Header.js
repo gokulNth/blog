@@ -34,7 +34,7 @@ class HeaderNav extends React.Component {
         className='navbar navbar-light bg-light'
         id='navbar'
         style={{
-          zIndex: 3,
+          zIndex: 2,
           boxShadow: '10px 10px 20px grey',
         }}
       >
