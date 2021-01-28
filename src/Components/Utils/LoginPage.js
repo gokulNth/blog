@@ -2,12 +2,16 @@ import React from 'react';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import { addUserIfNeeded, signIn, signOut } from '../Firebase/utils';
+import { Link } from 'react-router-dom';
+import profile from '../Images/profile.png';
+import signout from '../Images/signout.png';
 
 class LoginPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       user: null,
+      popup: false,
     };
   }
   componentDidMount() {
@@ -23,7 +27,7 @@ class LoginPage extends React.Component {
     });
   }
   render() {
-    let { user } = this.state;
+    let { user, popup } = this.state;
     return user === null ? (
       <button
         type='button'
@@ -47,15 +51,47 @@ class LoginPage extends React.Component {
         <button
           className='btn btn-primary'
           type='button'
-          onClick={() => {
-            let a = window.confirm('Are you sure you want to sign out');
-            if (a) {
-              signOut(firebase);
-            }
-          }}
+          onClick={() =>
+            user !== null && this.setState({ popup: !this.state.popup })
+          }
         >
           {this.state.user.toUpperCase()}
         </button>
+        {popup && (
+          <div
+            style={{
+              position: 'absolute',
+              marginTop: 3,
+              marginLeft: 5,
+              backgroundColor: 'white',
+              width: '90%',
+              padding: 10,
+              cursor: 'pointer',
+              lineHeight: 1,
+              border: '1px solid black',
+              borderRadius: '5px',
+            }}
+          >
+            <center>
+              <img src={profile} alt={'profile'} />{' '}
+              <Link
+                style={{ textDecoration: 'none', color: 'black' }}
+                to='/profile'
+              >
+                Profile
+              </Link>
+            </center>
+            <hr style={{ lineHeight: 1 }} />
+            <center>
+              <img
+                style={{ width: 20, height: 20, marginBottom: 5 }}
+                src={signout}
+                alt='signOut'
+              />{' '}
+              <span onClick={() => signOut(firebase)}>Sign Out</span>
+            </center>
+          </div>
+        )}
       </div>
     );
   }

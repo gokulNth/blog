@@ -6,6 +6,7 @@ body {
   /* transform: rotate3d(-10, 90, 20, 15deg); */
   box-shadow: 20px 25px 50px #888888;
   /* z-index: 1; */
+  padding: 10px;
 }
 
 .sticky {
@@ -15,18 +16,18 @@ body {
 }
 
 .content {
-  padding-top: 70px;
+  padding-top: 60px;
 }
 
 .sticky + .content {
-  padding-top: 130px;
+  padding-top: 120px;
 }
 
-center {
+.capitalizeFirstWord {
   line-height: 1.5;
 }
 
-center::first-letter {
+.capitalizeFirstWord::first-letter {
   color: white;
   font-family: cursive;
   background-color: black;
@@ -77,4 +78,24 @@ img.like:active {
   100% {
     transform: translate(1px, -2px) rotate(-1deg);
   }
+}
+
+.badge-danger {
+  background-color: red;
+  border-radius: 20px;
+  line-height: normal;
+  cursor: pointer;
+}
+
+.badge-dark {
+  background-color: rgb(0, 61, 108);
+  line-height: normal;
+  padding: 10px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.tagContainer {
+  width: 90%;
+  padding: 20px;
 }

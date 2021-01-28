@@ -1,13 +1,32 @@
 import db from './config';
 import firebase from 'firebase';
 
-export function getAllArticles() {
+export function getAllArticles(where, order) {
+  return where && where.length > 0
+    ? db
+        .collection('article')
+        .where('tags', 'array-contains-any', where)
+        .get()
+        .then((querySnapshot) => {
+          return querySnapshot.docs.map((doc) => doc.data());
+        })
+        .catch((err) => err)
+    : db
+        .collection('article')
+        .orderBy('id', order)
+        .get()
+        .then((querySnapshot) => {
+          return querySnapshot.docs.map((doc) => doc.data());
+        })
+        .catch((err) => err);
+}
+
+export function getTagsList() {
   return db
-    .collection('article')
+    .collection('tags')
+    .doc('tags')
     .get()
-    .then((querySnapshot) => {
-      return querySnapshot.docs.map((doc) => doc.data());
-    });
+    .then((tagsSnapshot) => tagsSnapshot.data());
 }
 
 export function signIn(firebase) {

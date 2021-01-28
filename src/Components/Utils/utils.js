@@ -1,3 +1,5 @@
+import { Fragment } from 'react';
+
 export function cssScroll() {
   window.onscroll = function () {
     myFunction();
@@ -23,4 +25,16 @@ export function truncate(content) {
     0,
     window.innerWidth < 1000 ? 200 : window.innerWidth < 500 ? 100 : 300
   )}  ...`;
+}
+
+export function TagsList(props) {
+  let { tags, removeTags } = props;
+  return tags.map((tag, index) => (
+    <Fragment key={index}>
+      <div onClick={() => removeTags(tag)} className='badge badge-dark'>
+        {tag} &times;
+      </div>
+      {'  '}
+    </Fragment>
+  ));
 }
