@@ -1,7 +1,7 @@
 import db from './config';
 import firebase from 'firebase';
 
-export function getAllArticles(where, order) {
+export function getAllArticles(where) {
   return where && where.length > 0
     ? db
         .collection('article')
@@ -13,7 +13,6 @@ export function getAllArticles(where, order) {
         .catch((err) => err)
     : db
         .collection('article')
-        .orderBy('id', order)
         .get()
         .then((querySnapshot) => {
           return querySnapshot.docs.map((doc) => doc.data());
